@@ -10,6 +10,7 @@ import UIKit
 import Transitions
 
 extension BaseTransition {
+    
     static var embedded: EmbeddedViewTransition {
         return EmbeddedViewTransition()
     }
