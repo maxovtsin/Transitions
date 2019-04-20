@@ -8,7 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		504424DC22662426004E7EDB /* LeaksDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504424DB22662426004E7EDB /* LeaksDetector.swift */; };
-		506E2D3B226B6D2800C9914E /* Transitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 50B2239D22524F0C00588D5E /* Transitions.h */; };
+		506E2D3B226B6D2800C9914E /* Transitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 50B2239D22524F0C00588D5E /* Transitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		506E2D3C226B6F6500C9914E /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50716B302264BB8900EBBD10 /* LinkedList.swift */; };
+		506E2D3D226B6F6500C9914E /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506F407B226443AC008E7325 /* ModalTransition.swift */; };
+		506E2D3E226B6F6500C9914E /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506F407D226443B7008E7325 /* PushTransition.swift */; };
+		506E2D3F226B6F6500C9914E /* RootTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506F4079226443A1008E7325 /* RootTransition.swift */; };
+		506E2D40226B6F6500C9914E /* Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506F407F226443D5008E7325 /* Transitions.swift */; };
+		506E2D41226B6F6500C9914E /* ViewlessTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506F408122645691008E7325 /* ViewlessTransition.swift */; };
+		506E2D42226B6F6500C9914E /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B223B7225251CA00588D5E /* Flow.swift */; };
+		506E2D43226B6F6500C9914E /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E5645A225A234D007764DA /* Frame.swift */; };
+		506E2D44226B6F6500C9914E /* LeaksDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504424DB22662426004E7EDB /* LeaksDetector.swift */; };
+		506E2D45226B6F6500C9914E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B223BB225251CA00588D5E /* MainCoordinator.swift */; };
+		506E2D46226B6F6500C9914E /* TransitionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B223B9225251CA00588D5E /* TransitionHandler.swift */; };
 		506F407A226443A1008E7325 /* RootTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506F4079226443A1008E7325 /* RootTransition.swift */; };
 		506F407C226443AC008E7325 /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506F407B226443AC008E7325 /* ModalTransition.swift */; };
 		506F407E226443B7008E7325 /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506F407D226443B7008E7325 /* PushTransition.swift */; };
@@ -298,6 +309,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				506E2D3C226B6F6500C9914E /* LinkedList.swift in Sources */,
+				506E2D3D226B6F6500C9914E /* ModalTransition.swift in Sources */,
+				506E2D3E226B6F6500C9914E /* PushTransition.swift in Sources */,
+				506E2D3F226B6F6500C9914E /* RootTransition.swift in Sources */,
+				506E2D40226B6F6500C9914E /* Transitions.swift in Sources */,
+				506E2D41226B6F6500C9914E /* ViewlessTransition.swift in Sources */,
+				506E2D42226B6F6500C9914E /* Flow.swift in Sources */,
+				506E2D43226B6F6500C9914E /* Frame.swift in Sources */,
+				506E2D44226B6F6500C9914E /* LeaksDetector.swift in Sources */,
+				506E2D45226B6F6500C9914E /* MainCoordinator.swift in Sources */,
+				506E2D46226B6F6500C9914E /* TransitionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
