@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "50B2239922524F0C00588D5E"
                BuildableName = "Transitions.framework"
-               BlueprintName = "Transitions"
+               BlueprintName = "Transitions-iOS"
                ReferencedContainer = "container:Transitions.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,7 +47,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "50B2239922524F0C00588D5E"
             BuildableName = "Transitions.framework"
-            BlueprintName = "Transitions"
+            BlueprintName = "Transitions-iOS"
             ReferencedContainer = "container:Transitions.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,7 +65,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "50B2239922524F0C00588D5E"
             BuildableName = "Transitions.framework"
-            BlueprintName = "Transitions"
+            BlueprintName = "Transitions-iOS"
             ReferencedContainer = "container:Transitions.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

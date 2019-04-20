@@ -23,18 +23,15 @@
 		50B223F82252543800588D5E /* OpenDetailFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B223F02252543800588D5E /* OpenDetailFlow.swift */; };
 		50B223FC22525BAA00588D5E /* ShowOptionsFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B223FB22525BAA00588D5E /* ShowOptionsFlow.swift */; };
 		50E5645D225A3044007764DA /* PrepareDataFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E5645C225A3044007764DA /* PrepareDataFlow.swift */; };
-		50E56464225A39BB007764DA /* Transitions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50E56463225A39BB007764DA /* Transitions.framework */; };
-		50E56466225A39C8007764DA /* Transitions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 50E56463225A39BB007764DA /* Transitions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		50E56461225A397B007764DA /* Embed Frameworks */ = {
+		506E2D3A226B6A9500C9914E /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				50E56466225A39C8007764DA /* Transitions.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,7 +57,6 @@
 		50B223F02252543800588D5E /* OpenDetailFlow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenDetailFlow.swift; sourceTree = "<group>"; };
 		50B223FB22525BAA00588D5E /* ShowOptionsFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowOptionsFlow.swift; sourceTree = "<group>"; };
 		50E5645C225A3044007764DA /* PrepareDataFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareDataFlow.swift; sourceTree = "<group>"; };
-		50E56463225A39BB007764DA /* Transitions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Transitions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50E56464225A39BB007764DA /* Transitions.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,7 +162,6 @@
 		50E56462225A39BB007764DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				50E56463225A39BB007764DA /* Transitions.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -182,7 +176,7 @@
 				50B223C62252531600588D5E /* Sources */,
 				50B223C72252531600588D5E /* Frameworks */,
 				50B223C82252531600588D5E /* Resources */,
-				50E56461225A397B007764DA /* Embed Frameworks */,
+				506E2D3A226B6A9500C9914E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
