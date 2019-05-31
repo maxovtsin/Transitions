@@ -20,7 +20,7 @@ public class Frame {
 
     let flow: AnyObject
     let presentationMode: PresentationMode
-    weak var viewController: UIViewController?
+    public weak var viewController: UIViewController?
     
     public init<FlowT>(
         flow: FlowT,
