@@ -11,11 +11,12 @@ public protocol Flow: class {
     associatedtype Injection
     associatedtype FlowInput
 
-    init()
+    var coordinator: Coordinator { get }
+
+    init(coordinator: Coordinator)
 
     func start(
         injection: Injection,
-        coordinator: Coordinator,
         transitionHandler: TransitionHandler
     ) -> FlowInput
 }

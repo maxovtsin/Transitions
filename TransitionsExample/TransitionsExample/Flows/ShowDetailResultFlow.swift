@@ -12,10 +12,14 @@ import Transitions
 final class ShowDetailResultFlow: Flow {
 
     private let resultVC = ResultViewController()
+    let coordinator: Coordinator
+
+    init(coordinator: Coordinator) {
+        self.coordinator = coordinator
+    }
 
     func start(
         injection: UIView,
-        coordinator: Coordinator,
         transitionHandler: TransitionHandler
         ) -> ShowDetailResultFlowInput {
 

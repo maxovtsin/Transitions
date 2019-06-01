@@ -10,10 +10,15 @@ import UIKit
 import Transitions
 
 final class PrepareDataFlow: Flow {
+
+    let coordinator: Coordinator
+
+    init(coordinator: Coordinator) {
+        self.coordinator = coordinator
+    }
     
     func start(
         injection: Injection,
-        coordinator: Coordinator,
         transitionHandler: TransitionHandler
         ) {
 

@@ -56,10 +56,9 @@ public class MainCoordinator: Coordinator {
         ) -> FlowT.FlowInput where FlowT: Flow  {
 
         guard window != nil else { fatalError("Coordinator is not launched") }
-        let flow = flowType.init()
+        let flow = flowType.init(coordinator: self)
         return flow.start(
             injection: injection,
-            coordinator: self,
             transitionHandler: self
         )
     }
@@ -69,10 +68,9 @@ public class MainCoordinator: Coordinator {
         ) -> FlowT.FlowInput where FlowT: Flow, FlowT.Injection == Void {
 
         guard window != nil else { fatalError("Coordinator is not launched") }
-        let flow = flowType.init()
+        let flow = flowType.init(coordinator: self)
         return flow.start(
             injection: Void(),
-            coordinator: self,
             transitionHandler: self
         )
     }

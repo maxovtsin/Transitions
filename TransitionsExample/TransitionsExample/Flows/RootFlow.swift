@@ -11,9 +11,14 @@ import Transitions
 
 final class RootFlow: Flow {
 
+    let coordinator: Coordinator
+
+    init(coordinator: Coordinator) {
+        self.coordinator = coordinator
+    }
+
     func start(
         injection: ServiceProvider,
-        coordinator: Coordinator,
         transitionHandler: TransitionHandler
         ) {
 
@@ -23,8 +28,9 @@ final class RootFlow: Flow {
         )
 
         mainViewController.didPressDetails = { [weak self] in
-            self?.showDetails(
-                coordinator: coordinator,
+            guard let self = self else { return }
+            self.showDetails(
+                coordinator: self.coordinator,
                 injection: injection
             )
         }

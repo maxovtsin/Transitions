@@ -11,9 +11,14 @@ import Transitions
 
 final class ShowOptionsFlow: Flow {
 
+    let coordinator: Coordinator
+
+    init(coordinator: Coordinator) {
+        self.coordinator = coordinator
+    }
+
     func start(
         injection: Injection,
-        coordinator: Coordinator,
         transitionHandler: TransitionHandler
         ) {
         
@@ -25,13 +30,13 @@ final class ShowOptionsFlow: Flow {
         
         let runAction = UIAlertAction(title: "Run Preparation", style: .default) { (_) in
             self.didPressRun(
-                coordinator: coordinator,
+                coordinator: self.coordinator,
                 injection: injection
             )
         }
         
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
-            coordinator.didFinish(flow: self)
+            self.coordinator.didFinish(flow: self)
         }
         
         alertController.addAction(runAction)
