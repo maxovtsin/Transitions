@@ -111,8 +111,7 @@ extension MainCoordinator {
             let viewController = _last.value.viewController
             let mode = _last.value.presentationMode
 
-            if (viewController == nil || viewController?.view.window == nil) ||
-                (mode == .viewless || mode == .custom) {
+            if (viewController == nil || viewController?.view.window == nil) || mode == .viewless {
                 last = last?.previous
             } else {
                 break
