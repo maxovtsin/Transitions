@@ -42,6 +42,19 @@ public class Frame {
     }
 }
 
+public extension Frame {
+
+    func visibleViewController() -> UIViewController? {
+        guard let frameViewController = viewController else { return nil }
+        switch frameViewController {
+        case is UITabBarController:
+            return (frameViewController as! UITabBarController).selectedViewController
+        default:
+            return frameViewController
+        }
+    }
+}
+
 extension Frame: CustomStringConvertible {
 
     public var description: String {

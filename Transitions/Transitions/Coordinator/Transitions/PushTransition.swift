@@ -17,13 +17,14 @@ public final class PushTransition: BaseTransition, Transition {
         ) where FlowT: Flow {
 
         let frame = coordinator.lastVisibleFrame()
+        let viewController = frame.visibleViewController()
 
         if frame.presentationMode == .push {
-            frame.viewController?.navigationController?.pushViewController(
+            viewController?.navigationController?.pushViewController(
                 params,
                 animated: true
             )
-        } else if let navigationController = frame.viewController as? UINavigationController {
+        } else if let navigationController = viewController as? UINavigationController {
             navigationController.pushViewController(
                 params,
                 animated: true

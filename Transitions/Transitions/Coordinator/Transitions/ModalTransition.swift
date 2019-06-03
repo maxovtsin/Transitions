@@ -17,8 +17,9 @@ public final class ModalTransition: BaseTransition, Transition {
         ) where FlowT: Flow {
 
         let frame = coordinator.lastVisibleFrame()
+        let viewController = frame.visibleViewController()
 
-        frame.viewController?.present(
+        viewController?.present(
             params,
             animated: true,
             completion: nil
