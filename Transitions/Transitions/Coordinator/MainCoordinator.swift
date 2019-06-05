@@ -24,9 +24,9 @@ public protocol Coordinator {
         _ flowType: FlowT.Type
         ) -> FlowT.FlowInput where FlowT: Flow, FlowT.Injection == Void
 
-    func didFinish<FlowT>(
-        flow: FlowT
-        ) where FlowT: Flow
+    func didFinish(
+        flow: AnyObject
+    )
 }
 
 public class MainCoordinator: Coordinator {
@@ -65,18 +65,23 @@ public class MainCoordinator: Coordinator {
 
     public func show<FlowT>(
         _ flowType: FlowT.Type
-        ) -> FlowT.FlowInput where FlowT: Flow, FlowT.Injection == Void {
+        ) -> FlowT.FlowInput where FlowT: Flow,
+        FlowT.Injection == Void {
 
-        guard window != nil else { fatalError("Coordinator is not launched") }
-        let flow = flowType.init(coordinator: self)
-        return flow.start(
-            injection: Void(),
-            transitionHandler: self
-        )
+            guard window != nil
+                else { fatalError("Coordinator is not launched") }
+            let flow = flowType.init(coordinator: self)
+            return flow.start(
+                injection: Void(),
+                transitionHandler: self
+            )
     }
 
-    public func didFinish<FlowT>(flow: FlowT) where FlowT: Flow {
-        guard var last = list.last else { fatalError("Stack is empty") }
+    public func didFinish(
+        flow: AnyObject
+        ) {
+        guard var last = list.last
+            else { fatalError("Stack is empty") }
 
         while last.value.presentationMode != .root {
             if last.value.flow === flow {
@@ -111,7 +116,7 @@ extension MainCoordinator {
             let viewController = _last.value.viewController
             let mode = _last.value.presentationMode
 
-            if viewController == nil || viewController?.view.window == nil || mode == .viewless || mode == .custom {
+            if viewController == nil || viewController?.view.window == nil || mode == .custom {
                 last = last?.previous
             } else {
                 break
@@ -121,6 +126,13 @@ extension MainCoordinator {
         if let frame = last?.value { return frame }
         fatalError("Must not happen")
     }
+
+    public func recentFrame(of mode: PresentationMode) -> Frame {
+        if mode == .root {
+            return list.head!.value
+        }
+        fatalError("Not implemented yet")
+    }
 }
 
 extension MainCoordinator: TransitionHandler {
@@ -129,14 +141,26 @@ extension MainCoordinator: TransitionHandler {
         flow: FlowT,
         transition: TransitionT,
         params: ParametersT
-        ) where FlowT: Flow, TransitionT: Transition, TransitionT: BaseTransition, ParametersT == TransitionT.ParametersT {
+        ) where FlowT: Flow,
+        TransitionT: Transition,
+        TransitionT: BaseTransition,
+        ParametersT == TransitionT.ParametersT {
 
-        leaksDetector.detect(in: list)
+            leaksDetector.detect(in: list)
 
-        transition.handle(
-          flow: flow,
-          params: params,
-          coordinator: self
-      )
+            transition.handle(
+                flow: flow,
+                params: params,
+                coordinator: self
+            )
+    }
+}
+
+internal extension MainCoordinator {
+
+    func injectOnDeinitHandler(object: NSObject, flow: AnyObject) {
+        object.onDeinit = { [unowned self] in
+            self.didFinish(flow: flow)
+        }
     }
 }

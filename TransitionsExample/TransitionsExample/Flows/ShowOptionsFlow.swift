@@ -28,16 +28,16 @@ final class ShowOptionsFlow: Flow {
             preferredStyle: .actionSheet
         )
         
-        let runAction = UIAlertAction(title: "Run Preparation", style: .default) { (_) in
+        let runAction = UIAlertAction(
+        title: "Run Preparation",
+        style: .default) { (_) in
             self.didPressRun(
                 coordinator: self.coordinator,
                 injection: injection
             )
         }
         
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (_) in
-            self.coordinator.didFinish(flow: self)
-        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         
         alertController.addAction(runAction)
         alertController.addAction(cancel)
@@ -49,12 +49,15 @@ final class ShowOptionsFlow: Flow {
         )
     }
 
-    private func didPressRun(coordinator: Coordinator, injection: Injection) {
-        coordinator.didFinish(flow: self)
-
+    private func didPressRun(
+        coordinator: Coordinator,
+        injection: Injection
+        ) {
         coordinator.show(
             PrepareDataFlow.self,
-            injection: PrepareDataFlow.Injection(prepared: injection.prepared)
+            injection: PrepareDataFlow.Injection(
+                prepared: injection.prepared
+            )
         )
     }
 

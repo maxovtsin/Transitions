@@ -22,7 +22,7 @@ open class BaseTransition {
     public static let push = PushTransition()
     public static let modal = ModalTransition()
     public static let root = RootTransition()
-    public static let viewless = ViewlessTransition()
+    public static let inTabBar = InTabBarTransition()
 
     public init() {}
 }

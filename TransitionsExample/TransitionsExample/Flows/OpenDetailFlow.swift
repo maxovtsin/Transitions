@@ -39,11 +39,6 @@ final class OpenDetailFlow: Flow {
                 injection: injection
             )
         }
-        viewController.didDeinit = { [weak self] in
-            guard let self = self else { return }
-            self.detailResultFlowInput?.parentFlowIsDead(self.coordinator)
-            self.coordinator.didFinish(flow: self)
-        }
 
         transitionHandler.present(
             flow: self,

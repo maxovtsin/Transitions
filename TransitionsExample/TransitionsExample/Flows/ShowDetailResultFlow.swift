@@ -37,13 +37,8 @@ extension ShowDetailResultFlow: ShowDetailResultFlowInput {
     func updated() {
         resultVC.labelDetail.text = "Data is Updated"
     }
-
-    func parentFlowIsDead(_ coordinator: Coordinator) {
-        coordinator.didFinish(flow: self)
-    }
 }
 
 protocol ShowDetailResultFlowInput: FlowInput {
     func updated()
-    func parentFlowIsDead(_ coordinator: Coordinator)
 }

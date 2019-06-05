@@ -25,6 +25,11 @@ public final class ModalTransition: BaseTransition, Transition {
             completion: nil
         )
 
+        coordinator.injectOnDeinitHandler(
+            object: params,
+            flow: flow
+        )
+
         coordinator.append(
             frame: Frame(
                 flow: flow,

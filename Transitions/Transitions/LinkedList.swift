@@ -71,7 +71,8 @@ public final class LinkedList<T> {
         head = nil
     }
 
-    @discardableResult public func remove(node: Node) -> T {
+    @discardableResult
+    public func remove(node: Node) -> T {
         let prev = node.previous
         let next = node.next
 

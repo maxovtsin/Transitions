@@ -11,8 +11,8 @@ import UIKit
 public enum PresentationMode {
     case modal
     case push
-    case viewless
     case root
+    case inTabBar
     case custom
 }
 
@@ -56,7 +56,6 @@ public extension Frame {
 }
 
 extension Frame: CustomStringConvertible {
-
     public var description: String {
         return String(describing: flow)
     }

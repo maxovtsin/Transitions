@@ -32,6 +32,11 @@ public final class PushTransition: BaseTransition, Transition {
         } else {
             fatalError("Can't")
         }
+
+        coordinator.injectOnDeinitHandler(
+            object: params,
+            flow: flow
+        )
         
         coordinator.append(
             frame: Frame(

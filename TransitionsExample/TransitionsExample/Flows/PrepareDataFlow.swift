@@ -22,14 +22,7 @@ final class PrepareDataFlow: Flow {
         transitionHandler: TransitionHandler
         ) {
 
-        transitionHandler.present(
-            flow: self,
-            transition: BaseTransition.viewless,
-            params: Void()
-        )
-
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//            coordinator.didFinish(flow: self)
             injection.prepared("Some Data")
         }
     }

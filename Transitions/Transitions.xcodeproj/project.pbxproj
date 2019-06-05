@@ -14,7 +14,6 @@
 		506E2D3E226B6F6500C9914E /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506F407D226443B7008E7325 /* PushTransition.swift */; };
 		506E2D3F226B6F6500C9914E /* RootTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506F4079226443A1008E7325 /* RootTransition.swift */; };
 		506E2D40226B6F6500C9914E /* Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506F407F226443D5008E7325 /* Transitions.swift */; };
-		506E2D41226B6F6500C9914E /* ViewlessTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506F408122645691008E7325 /* ViewlessTransition.swift */; };
 		506E2D42226B6F6500C9914E /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B223B7225251CA00588D5E /* Flow.swift */; };
 		506E2D43226B6F6500C9914E /* Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E5645A225A234D007764DA /* Frame.swift */; };
 		506E2D44226B6F6500C9914E /* LeaksDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504424DB22662426004E7EDB /* LeaksDetector.swift */; };
@@ -24,8 +23,11 @@
 		506F407C226443AC008E7325 /* ModalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506F407B226443AC008E7325 /* ModalTransition.swift */; };
 		506F407E226443B7008E7325 /* PushTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506F407D226443B7008E7325 /* PushTransition.swift */; };
 		506F4080226443D5008E7325 /* Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506F407F226443D5008E7325 /* Transitions.swift */; };
-		506F408222645691008E7325 /* ViewlessTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506F408122645691008E7325 /* ViewlessTransition.swift */; };
 		50716B312264BB8900EBBD10 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50716B302264BB8900EBBD10 /* LinkedList.swift */; };
+		50952CFF22A780A90081404E /* NSObject+LifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50952CFE22A780A90081404E /* NSObject+LifeCycle.swift */; };
+		50952D0022A780A90081404E /* NSObject+LifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50952CFE22A780A90081404E /* NSObject+LifeCycle.swift */; };
+		50952D0222A781FA0081404E /* InTabBarTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50952D0122A781FA0081404E /* InTabBarTransition.swift */; };
+		50952D0322A781FA0081404E /* InTabBarTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50952D0122A781FA0081404E /* InTabBarTransition.swift */; };
 		50B223A422524F0C00588D5E /* Transitions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50B2239A22524F0C00588D5E /* Transitions.framework */; };
 		50B223A922524F0C00588D5E /* TransitionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B223A822524F0C00588D5E /* TransitionsTests.swift */; };
 		50B223AB22524F0C00588D5E /* Transitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 50B2239D22524F0C00588D5E /* Transitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -52,8 +54,9 @@
 		506F407B226443AC008E7325 /* ModalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransition.swift; sourceTree = "<group>"; };
 		506F407D226443B7008E7325 /* PushTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushTransition.swift; sourceTree = "<group>"; };
 		506F407F226443D5008E7325 /* Transitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transitions.swift; sourceTree = "<group>"; };
-		506F408122645691008E7325 /* ViewlessTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewlessTransition.swift; sourceTree = "<group>"; };
 		50716B302264BB8900EBBD10 /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		50952CFE22A780A90081404E /* NSObject+LifeCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+LifeCycle.swift"; sourceTree = "<group>"; };
+		50952D0122A781FA0081404E /* InTabBarTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InTabBarTransition.swift; sourceTree = "<group>"; };
 		50B2239A22524F0C00588D5E /* Transitions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Transitions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B2239D22524F0C00588D5E /* Transitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Transitions.h; sourceTree = "<group>"; };
 		50B2239E22524F0C00588D5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,13 +98,21 @@
 		506F40782264438D008E7325 /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
+				506F407F226443D5008E7325 /* Transitions.swift */,
+				50952D0122A781FA0081404E /* InTabBarTransition.swift */,
 				506F407B226443AC008E7325 /* ModalTransition.swift */,
 				506F407D226443B7008E7325 /* PushTransition.swift */,
 				506F4079226443A1008E7325 /* RootTransition.swift */,
-				506F407F226443D5008E7325 /* Transitions.swift */,
-				506F408122645691008E7325 /* ViewlessTransition.swift */,
 			);
 			path = Transitions;
+			sourceTree = "<group>";
+		};
+		50952CFD22A780940081404E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				50952CFE22A780A90081404E /* NSObject+LifeCycle.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		50B2239022524F0C00588D5E = {
@@ -146,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				506F40782264438D008E7325 /* Transitions */,
+				50952CFD22A780940081404E /* Extensions */,
 				50B223B7225251CA00588D5E /* Flow.swift */,
 				50E5645A225A234D007764DA /* Frame.swift */,
 				504424DB22662426004E7EDB /* LeaksDetector.swift */,
@@ -311,13 +323,14 @@
 			files = (
 				506E2D3C226B6F6500C9914E /* LinkedList.swift in Sources */,
 				506E2D3D226B6F6500C9914E /* ModalTransition.swift in Sources */,
+				50952D0022A780A90081404E /* NSObject+LifeCycle.swift in Sources */,
 				506E2D3E226B6F6500C9914E /* PushTransition.swift in Sources */,
 				506E2D3F226B6F6500C9914E /* RootTransition.swift in Sources */,
 				506E2D40226B6F6500C9914E /* Transitions.swift in Sources */,
-				506E2D41226B6F6500C9914E /* ViewlessTransition.swift in Sources */,
 				506E2D42226B6F6500C9914E /* Flow.swift in Sources */,
 				506E2D43226B6F6500C9914E /* Frame.swift in Sources */,
 				506E2D44226B6F6500C9914E /* LeaksDetector.swift in Sources */,
+				50952D0322A781FA0081404E /* InTabBarTransition.swift in Sources */,
 				506E2D45226B6F6500C9914E /* MainCoordinator.swift in Sources */,
 				506E2D46226B6F6500C9914E /* TransitionHandler.swift in Sources */,
 			);
@@ -329,15 +342,16 @@
 			files = (
 				506F407E226443B7008E7325 /* PushTransition.swift in Sources */,
 				506F407C226443AC008E7325 /* ModalTransition.swift in Sources */,
+				50952CFF22A780A90081404E /* NSObject+LifeCycle.swift in Sources */,
 				50E5645B225A234D007764DA /* Frame.swift in Sources */,
 				50B223BC225251CB00588D5E /* Flow.swift in Sources */,
 				50B223C0225251CB00588D5E /* MainCoordinator.swift in Sources */,
 				50B223BE225251CB00588D5E /* TransitionHandler.swift in Sources */,
 				506F4080226443D5008E7325 /* Transitions.swift in Sources */,
 				506F407A226443A1008E7325 /* RootTransition.swift in Sources */,
+				50952D0222A781FA0081404E /* InTabBarTransition.swift in Sources */,
 				504424DC22662426004E7EDB /* LeaksDetector.swift in Sources */,
 				50716B312264BB8900EBBD10 /* LinkedList.swift in Sources */,
-				506F408222645691008E7325 /* ViewlessTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
